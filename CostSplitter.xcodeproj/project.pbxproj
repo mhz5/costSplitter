@@ -192,8 +192,7 @@
 				BB82B91219512FBE00E175FA /* CostSplitter.xcdatamodeld */,
 				BB82B90719512FBD00E175FA /* Supporting Files */,
 			);
-			name = CostSplitter;
-			path = BackendTutorial;
+			path = CostSplitter;
 			sourceTree = "<group>";
 		};
 		BB82B90719512FBD00E175FA /* Supporting Files */ = {
@@ -213,8 +212,7 @@
 				BB82B92919512FBE00E175FA /* CostSplitterTests.m */,
 				BB82B92419512FBE00E175FA /* Supporting Files */,
 			);
-			name = CostSplitterTests;
-			path = BackendTutorialTests;
+			path = CostSplitterTests;
 			sourceTree = "<group>";
 		};
 		BB82B92419512FBE00E175FA /* Supporting Files */ = {
@@ -454,7 +452,7 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BackendTutorial/CostSplitter-Prefix.pch";
+				GCC_PREFIX_HEADER = "CostSplitter/CostSplitter-Prefix.pch";
 				INFOPLIST_FILE = "BackendTutorial/CostSplitter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -476,7 +474,7 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BackendTutorial/CostSplitter-Prefix.pch";
+				GCC_PREFIX_HEADER = "CostSplitter/CostSplitter-Prefix.pch";
 				INFOPLIST_FILE = "BackendTutorial/CostSplitter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

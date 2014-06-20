@@ -2,6 +2,6 @@
 <Workspace
    version = "1.0">
    <FileRef
-      location = "self:BackendTutorial.xcodeproj">
+      location = "self:CostSplitter.xcodeproj">
    </FileRef>
 </Workspace>

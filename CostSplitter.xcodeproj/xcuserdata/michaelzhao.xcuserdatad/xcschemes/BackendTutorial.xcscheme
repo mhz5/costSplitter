@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB82B8FA19512FBD00E175FA"
-               BuildableName = "BackendTutorial.app"
-               BlueprintName = "BackendTutorial"
-               ReferencedContainer = "container:BackendTutorial.xcodeproj">
+               BuildableName = "CostSplitter.app"
+               BlueprintName = "CostSplitter"
+               ReferencedContainer = "container:CostSplitter.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -33,9 +33,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "BB82B91A19512FBE00E175FA"
-               BuildableName = "BackendTutorialTests.xctest"
-               BlueprintName = "BackendTutorialTests"
-               ReferencedContainer = "container:BackendTutorial.xcodeproj">
+               BuildableName = "CostSplitterTests.xctest"
+               BlueprintName = "CostSplitterTests"
+               ReferencedContainer = "container:CostSplitter.xcodeproj">
             </BuildableReference>
          </TestableReference>
       </Testables>
@@ -43,9 +43,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB82B8FA19512FBD00E175FA"
-            BuildableName = "BackendTutorial.app"
-            BlueprintName = "BackendTutorial"
-            ReferencedContainer = "container:BackendTutorial.xcodeproj">
+            BuildableName = "CostSplitter.app"
+            BlueprintName = "CostSplitter"
+            ReferencedContainer = "container:CostSplitter.xcodeproj">
          </BuildableReference>
       </MacroExpansion>
    </TestAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB82B8FA19512FBD00E175FA"
-            BuildableName = "BackendTutorial.app"
-            BlueprintName = "BackendTutorial"
-            ReferencedContainer = "container:BackendTutorial.xcodeproj">
+            BuildableName = "CostSplitter.app"
+            BlueprintName = "CostSplitter"
+            ReferencedContainer = "container:CostSplitter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
       <AdditionalOptions>
@@ -80,9 +80,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "BB82B8FA19512FBD00E175FA"
-            BuildableName = "BackendTutorial.app"
-            BlueprintName = "BackendTutorial"
-            ReferencedContainer = "container:BackendTutorial.xcodeproj">
+            BuildableName = "CostSplitter.app"
+            BlueprintName = "CostSplitter"
+            ReferencedContainer = "container:CostSplitter.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

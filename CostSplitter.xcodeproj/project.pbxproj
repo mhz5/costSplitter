@@ -16,14 +16,14 @@
 		BB82B90B19512FBD00E175FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB82B90919512FBD00E175FA /* InfoPlist.strings */; };
 		BB82B90D19512FBE00E175FA /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82B90C19512FBE00E175FA /* main.m */; };
 		BB82B91119512FBE00E175FA /* CostAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82B91019512FBE00E175FA /* CostAppDelegate.m */; };
-		BB82B91419512FBE00E175FA /* BackendTutorial.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB82B91219512FBE00E175FA /* BackendTutorial.xcdatamodeld */; };
+		BB82B91419512FBE00E175FA /* CostSplitter.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = BB82B91219512FBE00E175FA /* CostSplitter.xcdatamodeld */; };
 		BB82B91619512FBE00E175FA /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BB82B91519512FBE00E175FA /* Images.xcassets */; };
 		BB82B91D19512FBE00E175FA /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B91C19512FBE00E175FA /* XCTest.framework */; };
 		BB82B91E19512FBE00E175FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B8FE19512FBD00E175FA /* Foundation.framework */; };
 		BB82B91F19512FBE00E175FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B90219512FBD00E175FA /* UIKit.framework */; };
 		BB82B92019512FBE00E175FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B90419512FBD00E175FA /* CoreData.framework */; };
 		BB82B92819512FBE00E175FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB82B92619512FBE00E175FA /* InfoPlist.strings */; };
-		BB82B92A19512FBE00E175FA /* BackendTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82B92919512FBE00E175FA /* BackendTutorialTests.m */; };
+		BB82B92A19512FBE00E175FA /* CostSplitterTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82B92919512FBE00E175FA /* CostSplitterTests.m */; };
 		BB82B9341951328300E175FA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B9331951328300E175FA /* Parse.framework */; };
 		BB82B936195132EC00E175FA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B935195132EC00E175FA /* SystemConfiguration.framework */; };
 		BB82B938195132F200E175FA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B937195132F200E175FA /* Security.framework */; };
@@ -52,29 +52,28 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		BB5EC22A1952A741008AEB48 /* BackendTutorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackendTutorial-Bridging-Header.h"; sourceTree = "<group>"; };
 		BB5EC2331952A800008AEB48 /* WallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallVC.h; sourceTree = "<group>"; };
 		BB5EC2341952A800008AEB48 /* WallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallVC.m; sourceTree = "<group>"; };
 		BB5EC2361952AA7B008AEB48 /* LoadingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingVC.h; sourceTree = "<group>"; };
 		BB5EC2371952AA7B008AEB48 /* LoadingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingVC.m; sourceTree = "<group>"; };
-		BB82B8FB19512FBD00E175FA /* BackendTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackendTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB82B8FB19512FBD00E175FA /* CostSplitter.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = CostSplitter.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB82B8FE19512FBD00E175FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB82B90019512FBD00E175FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
 		BB82B90219512FBD00E175FA /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		BB82B90419512FBD00E175FA /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
-		BB82B90819512FBD00E175FA /* BackendTutorial-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BackendTutorial-Info.plist"; sourceTree = "<group>"; };
+		BB82B90819512FBD00E175FA /* CostSplitter-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CostSplitter-Info.plist"; sourceTree = "<group>"; };
 		BB82B90A19512FBD00E175FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BB82B90C19512FBE00E175FA /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
-		BB82B90E19512FBE00E175FA /* BackendTutorial-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackendTutorial-Prefix.pch"; sourceTree = "<group>"; };
+		BB82B90E19512FBE00E175FA /* CostSplitter-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "CostSplitter-Prefix.pch"; sourceTree = "<group>"; };
 		BB82B90F19512FBE00E175FA /* CostAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CostAppDelegate.h; sourceTree = "<group>"; };
 		BB82B91019512FBE00E175FA /* CostAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CostAppDelegate.m; sourceTree = "<group>"; };
-		BB82B91319512FBE00E175FA /* BackendTutorial.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = BackendTutorial.xcdatamodel; sourceTree = "<group>"; };
+		BB82B91319512FBE00E175FA /* CostSplitter.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = CostSplitter.xcdatamodel; sourceTree = "<group>"; };
 		BB82B91519512FBE00E175FA /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
-		BB82B91B19512FBE00E175FA /* BackendTutorialTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BackendTutorialTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		BB82B91B19512FBE00E175FA /* CostSplitterTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CostSplitterTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB82B91C19512FBE00E175FA /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
-		BB82B92519512FBE00E175FA /* BackendTutorialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BackendTutorialTests-Info.plist"; sourceTree = "<group>"; };
+		BB82B92519512FBE00E175FA /* CostSplitterTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "CostSplitterTests-Info.plist"; sourceTree = "<group>"; };
 		BB82B92719512FBE00E175FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
-		BB82B92919512FBE00E175FA /* BackendTutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackendTutorialTests.m; sourceTree = "<group>"; };
+		BB82B92919512FBE00E175FA /* CostSplitterTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = CostSplitterTests.m; sourceTree = "<group>"; };
 		BB82B9331951328300E175FA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
 		BB82B935195132EC00E175FA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
 		BB82B937195132F200E175FA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
@@ -135,19 +134,18 @@
 		BB82B8F219512FBD00E175FA = {
 			isa = PBXGroup;
 			children = (
-				BB82B90619512FBD00E175FA /* BackendTutorial */,
-				BB82B92319512FBE00E175FA /* BackendTutorialTests */,
+				BB82B90619512FBD00E175FA /* CostSplitter */,
+				BB82B92319512FBE00E175FA /* CostSplitterTests */,
 				BB82B8FD19512FBD00E175FA /* Frameworks */,
 				BB82B8FC19512FBD00E175FA /* Products */,
-				BB5EC22A1952A741008AEB48 /* BackendTutorial-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
 		BB82B8FC19512FBD00E175FA /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BB82B8FB19512FBD00E175FA /* BackendTutorial.app */,
-				BB82B91B19512FBE00E175FA /* BackendTutorialTests.xctest */,
+				BB82B8FB19512FBD00E175FA /* CostSplitter.app */,
+				BB82B91B19512FBE00E175FA /* CostSplitterTests.xctest */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -176,7 +174,7 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		BB82B90619512FBD00E175FA /* BackendTutorial */ = {
+		BB82B90619512FBD00E175FA /* CostSplitter */ = {
 			isa = PBXGroup;
 			children = (
 				BB82B90F19512FBE00E175FA /* CostAppDelegate.h */,
@@ -191,36 +189,38 @@
 				BB5EC2341952A800008AEB48 /* WallVC.m */,
 				BB82B94B195134EE00E175FA /* Main.storyboard */,
 				BB82B91519512FBE00E175FA /* Images.xcassets */,
-				BB82B91219512FBE00E175FA /* BackendTutorial.xcdatamodeld */,
+				BB82B91219512FBE00E175FA /* CostSplitter.xcdatamodeld */,
 				BB82B90719512FBD00E175FA /* Supporting Files */,
 			);
+			name = CostSplitter;
 			path = BackendTutorial;
 			sourceTree = "<group>";
 		};
 		BB82B90719512FBD00E175FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BB82B90819512FBD00E175FA /* BackendTutorial-Info.plist */,
+				BB82B90819512FBD00E175FA /* CostSplitter-Info.plist */,
 				BB82B90919512FBD00E175FA /* InfoPlist.strings */,
 				BB82B90C19512FBE00E175FA /* main.m */,
-				BB82B90E19512FBE00E175FA /* BackendTutorial-Prefix.pch */,
+				BB82B90E19512FBE00E175FA /* CostSplitter-Prefix.pch */,
 			);
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BB82B92319512FBE00E175FA /* BackendTutorialTests */ = {
+		BB82B92319512FBE00E175FA /* CostSplitterTests */ = {
 			isa = PBXGroup;
 			children = (
-				BB82B92919512FBE00E175FA /* BackendTutorialTests.m */,
+				BB82B92919512FBE00E175FA /* CostSplitterTests.m */,
 				BB82B92419512FBE00E175FA /* Supporting Files */,
 			);
+			name = CostSplitterTests;
 			path = BackendTutorialTests;
 			sourceTree = "<group>";
 		};
 		BB82B92419512FBE00E175FA /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				BB82B92519512FBE00E175FA /* BackendTutorialTests-Info.plist */,
+				BB82B92519512FBE00E175FA /* CostSplitterTests-Info.plist */,
 				BB82B92619512FBE00E175FA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
@@ -229,9 +229,9 @@
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BB82B8FA19512FBD00E175FA /* BackendTutorial */ = {
+		BB82B8FA19512FBD00E175FA /* CostSplitter */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB82B92D19512FBE00E175FA /* Build configuration list for PBXNativeTarget "BackendTutorial" */;
+			buildConfigurationList = BB82B92D19512FBE00E175FA /* Build configuration list for PBXNativeTarget "CostSplitter" */;
 			buildPhases = (
 				BB82B8F719512FBD00E175FA /* Sources */,
 				BB82B8F819512FBD00E175FA /* Frameworks */,
@@ -241,14 +241,14 @@
 			);
 			dependencies = (
 			);
-			name = BackendTutorial;
+			name = CostSplitter;
 			productName = BackendTutorial;
-			productReference = BB82B8FB19512FBD00E175FA /* BackendTutorial.app */;
+			productReference = BB82B8FB19512FBD00E175FA /* CostSplitter.app */;
 			productType = "com.apple.product-type.application";
 		};
-		BB82B91A19512FBE00E175FA /* BackendTutorialTests */ = {
+		BB82B91A19512FBE00E175FA /* CostSplitterTests */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BB82B93019512FBE00E175FA /* Build configuration list for PBXNativeTarget "BackendTutorialTests" */;
+			buildConfigurationList = BB82B93019512FBE00E175FA /* Build configuration list for PBXNativeTarget "CostSplitterTests" */;
 			buildPhases = (
 				BB82B91719512FBE00E175FA /* Sources */,
 				BB82B91819512FBE00E175FA /* Frameworks */,
@@ -259,9 +259,9 @@
 			dependencies = (
 				BB82B92219512FBE00E175FA /* PBXTargetDependency */,
 			);
-			name = BackendTutorialTests;
+			name = CostSplitterTests;
 			productName = BackendTutorialTests;
-			productReference = BB82B91B19512FBE00E175FA /* BackendTutorialTests.xctest */;
+			productReference = BB82B91B19512FBE00E175FA /* CostSplitterTests.xctest */;
 			productType = "com.apple.product-type.bundle.unit-test";
 		};
 /* End PBXNativeTarget section */
@@ -279,7 +279,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BB82B8F619512FBD00E175FA /* Build configuration list for PBXProject "BackendTutorial" */;
+			buildConfigurationList = BB82B8F619512FBD00E175FA /* Build configuration list for PBXProject "CostSplitter" */;
 			compatibilityVersion = "Xcode 3.2";
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
@@ -291,8 +291,8 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BB82B8FA19512FBD00E175FA /* BackendTutorial */,
-				BB82B91A19512FBE00E175FA /* BackendTutorialTests */,
+				BB82B8FA19512FBD00E175FA /* CostSplitter */,
+				BB82B91A19512FBE00E175FA /* CostSplitterTests */,
 			);
 		};
 /* End PBXProject section */
@@ -324,7 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BB5EC2351952A800008AEB48 /* WallVC.m in Sources */,
-				BB82B91419512FBE00E175FA /* BackendTutorial.xcdatamodeld in Sources */,
+				BB82B91419512FBE00E175FA /* CostSplitter.xcdatamodeld in Sources */,
 				BB82B90D19512FBE00E175FA /* main.m in Sources */,
 				BB82B95E1951464C00E175FA /* SignupVC.m in Sources */,
 				BB5EC2381952AA7B008AEB48 /* LoadingVC.m in Sources */,
@@ -337,7 +337,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				BB82B92A19512FBE00E175FA /* BackendTutorialTests.m in Sources */,
+				BB82B92A19512FBE00E175FA /* CostSplitterTests.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +346,7 @@
 /* Begin PBXTargetDependency section */
 		BB82B92219512FBE00E175FA /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
-			target = BB82B8FA19512FBD00E175FA /* BackendTutorial */;
+			target = BB82B8FA19512FBD00E175FA /* CostSplitter */;
 			targetProxy = BB82B92119512FBE00E175FA /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
@@ -454,11 +454,11 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BackendTutorial/BackendTutorial-Prefix.pch";
-				INFOPLIST_FILE = "BackendTutorial/BackendTutorial-Info.plist";
+				GCC_PREFIX_HEADER = "BackendTutorial/CostSplitter-Prefix.pch";
+				INFOPLIST_FILE = "BackendTutorial/CostSplitter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CostSplitter;
 				SWIFT_OBJC_BRIDGING_HEADER = "BackendTutorial-Bridging-Header.h";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
@@ -476,11 +476,11 @@
 					"$(PROJECT_DIR)",
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
-				GCC_PREFIX_HEADER = "BackendTutorial/BackendTutorial-Prefix.pch";
-				INFOPLIST_FILE = "BackendTutorial/BackendTutorial-Info.plist";
+				GCC_PREFIX_HEADER = "BackendTutorial/CostSplitter-Prefix.pch";
+				INFOPLIST_FILE = "BackendTutorial/CostSplitter-Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = CostSplitter;
 				SWIFT_OBJC_BRIDGING_HEADER = "BackendTutorial-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
@@ -501,8 +501,8 @@
 					"DEBUG=1",
 					"$(inherited)",
 				);
-				INFOPLIST_FILE = "BackendTutorialTests/BackendTutorialTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "BackendTutorialTests/CostSplitterTests-Info.plist";
+				PRODUCT_NAME = CostSplitterTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -519,8 +519,8 @@
 				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BackendTutorial/BackendTutorial-Prefix.pch";
-				INFOPLIST_FILE = "BackendTutorialTests/BackendTutorialTests-Info.plist";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				INFOPLIST_FILE = "BackendTutorialTests/CostSplitterTests-Info.plist";
+				PRODUCT_NAME = CostSplitterTests;
 				TEST_HOST = "$(BUNDLE_LOADER)";
 				WRAPPER_EXTENSION = xctest;
 			};
@@ -529,7 +529,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BB82B8F619512FBD00E175FA /* Build configuration list for PBXProject "BackendTutorial" */ = {
+		BB82B8F619512FBD00E175FA /* Build configuration list for PBXProject "CostSplitter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB82B92B19512FBE00E175FA /* Debug */,
@@ -538,7 +538,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB82B92D19512FBE00E175FA /* Build configuration list for PBXNativeTarget "BackendTutorial" */ = {
+		BB82B92D19512FBE00E175FA /* Build configuration list for PBXNativeTarget "CostSplitter" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB82B92E19512FBE00E175FA /* Debug */,
@@ -547,7 +547,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BB82B93019512FBE00E175FA /* Build configuration list for PBXNativeTarget "BackendTutorialTests" */ = {
+		BB82B93019512FBE00E175FA /* Build configuration list for PBXNativeTarget "CostSplitterTests" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BB82B93119512FBE00E175FA /* Debug */,
@@ -559,13 +559,13 @@
 /* End XCConfigurationList section */
 
 /* Begin XCVersionGroup section */
-		BB82B91219512FBE00E175FA /* BackendTutorial.xcdatamodeld */ = {
+		BB82B91219512FBE00E175FA /* CostSplitter.xcdatamodeld */ = {
 			isa = XCVersionGroup;
 			children = (
-				BB82B91319512FBE00E175FA /* BackendTutorial.xcdatamodel */,
+				BB82B91319512FBE00E175FA /* CostSplitter.xcdatamodel */,
 			);
-			currentVersion = BB82B91319512FBE00E175FA /* BackendTutorial.xcdatamodel */;
-			path = BackendTutorial.xcdatamodeld;
+			currentVersion = BB82B91319512FBE00E175FA /* CostSplitter.xcdatamodel */;
+			path = CostSplitter.xcdatamodeld;
 			sourceTree = "<group>";
 			versionGroupType = wrapper.xcdatamodel;
 		};

@@ -1,1 +1,1 @@
-=== Cost splitter App ===
+# Cost splitter App #

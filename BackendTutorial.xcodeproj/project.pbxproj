@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BB5EC2351952A800008AEB48 /* WallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5EC2341952A800008AEB48 /* WallVC.m */; };
+		BB5EC2381952AA7B008AEB48 /* LoadingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5EC2371952AA7B008AEB48 /* LoadingVC.m */; };
 		BB82B8FF19512FBD00E175FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B8FE19512FBD00E175FA /* Foundation.framework */; };
 		BB82B90119512FBD00E175FA /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B90019512FBD00E175FA /* CoreGraphics.framework */; };
 		BB82B90319512FBD00E175FA /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B90219512FBD00E175FA /* UIKit.framework */; };
@@ -22,6 +24,21 @@
 		BB82B92019512FBE00E175FA /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B90419512FBD00E175FA /* CoreData.framework */; };
 		BB82B92819512FBE00E175FA /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = BB82B92619512FBE00E175FA /* InfoPlist.strings */; };
 		BB82B92A19512FBE00E175FA /* BackendTutorialTests.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82B92919512FBE00E175FA /* BackendTutorialTests.m */; };
+		BB82B9341951328300E175FA /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B9331951328300E175FA /* Parse.framework */; };
+		BB82B936195132EC00E175FA /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B935195132EC00E175FA /* SystemConfiguration.framework */; };
+		BB82B938195132F200E175FA /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B937195132F200E175FA /* Security.framework */; };
+		BB82B93A195132FC00E175FA /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B939195132FC00E175FA /* libsqlite3.dylib */; };
+		BB82B93C1951330500E175FA /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B93B1951330500E175FA /* Accounts.framework */; };
+		BB82B93E1951330F00E175FA /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B93D1951330F00E175FA /* MobileCoreServices.framework */; };
+		BB82B9401951334900E175FA /* libz.1.1.3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B93F1951334900E175FA /* libz.1.1.3.dylib */; };
+		BB82B9421951335D00E175FA /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B9411951335D00E175FA /* AudioToolbox.framework */; };
+		BB82B9441951336100E175FA /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B9431951336100E175FA /* CFNetwork.framework */; };
+		BB82B9461951336A00E175FA /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B9451951336A00E175FA /* CoreLocation.framework */; };
+		BB82B9481951336F00E175FA /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B9471951336F00E175FA /* QuartzCore.framework */; };
+		BB82B94A1951337A00E175FA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B9491951337A00E175FA /* StoreKit.framework */; };
+		BB82B94C195134EE00E175FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB82B94B195134EE00E175FA /* Main.storyboard */; };
+		BB82B95E1951464C00E175FA /* SignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82B95D1951464C00E175FA /* SignupVC.m */; };
+		BB8DB6A819541552006DD663 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DB6A719541552006DD663 /* LoginVC.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +52,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		BB5EC22A1952A741008AEB48 /* BackendTutorial-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "BackendTutorial-Bridging-Header.h"; sourceTree = "<group>"; };
+		BB5EC2331952A800008AEB48 /* WallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallVC.h; sourceTree = "<group>"; };
+		BB5EC2341952A800008AEB48 /* WallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallVC.m; sourceTree = "<group>"; };
+		BB5EC2361952AA7B008AEB48 /* LoadingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingVC.h; sourceTree = "<group>"; };
+		BB5EC2371952AA7B008AEB48 /* LoadingVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoadingVC.m; sourceTree = "<group>"; };
 		BB82B8FB19512FBD00E175FA /* BackendTutorial.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BackendTutorial.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BB82B8FE19512FBD00E175FA /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		BB82B90019512FBD00E175FA /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
@@ -53,6 +75,23 @@
 		BB82B92519512FBE00E175FA /* BackendTutorialTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "BackendTutorialTests-Info.plist"; sourceTree = "<group>"; };
 		BB82B92719512FBE00E175FA /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		BB82B92919512FBE00E175FA /* BackendTutorialTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = BackendTutorialTests.m; sourceTree = "<group>"; };
+		BB82B9331951328300E175FA /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		BB82B935195132EC00E175FA /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		BB82B937195132F200E175FA /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		BB82B939195132FC00E175FA /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
+		BB82B93B1951330500E175FA /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
+		BB82B93D1951330F00E175FA /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		BB82B93F1951334900E175FA /* libz.1.1.3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.1.3.dylib; path = usr/lib/libz.1.1.3.dylib; sourceTree = SDKROOT; };
+		BB82B9411951335D00E175FA /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		BB82B9431951336100E175FA /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		BB82B9451951336A00E175FA /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		BB82B9471951336F00E175FA /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		BB82B9491951337A00E175FA /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		BB82B94B195134EE00E175FA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		BB82B95C1951464C00E175FA /* SignupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupVC.h; sourceTree = "<group>"; };
+		BB82B95D1951464C00E175FA /* SignupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupVC.m; sourceTree = "<group>"; };
+		BB8DB6A619541552006DD663 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
+		BB8DB6A719541552006DD663 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -60,10 +99,22 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB82B936195132EC00E175FA /* SystemConfiguration.framework in Frameworks */,
+				BB82B94A1951337A00E175FA /* StoreKit.framework in Frameworks */,
+				BB82B938195132F200E175FA /* Security.framework in Frameworks */,
+				BB82B9481951336F00E175FA /* QuartzCore.framework in Frameworks */,
+				BB82B9461951336A00E175FA /* CoreLocation.framework in Frameworks */,
 				BB82B90119512FBD00E175FA /* CoreGraphics.framework in Frameworks */,
+				BB82B9441951336100E175FA /* CFNetwork.framework in Frameworks */,
+				BB82B9421951335D00E175FA /* AudioToolbox.framework in Frameworks */,
+				BB82B9401951334900E175FA /* libz.1.1.3.dylib in Frameworks */,
+				BB82B93E1951330F00E175FA /* MobileCoreServices.framework in Frameworks */,
+				BB82B93C1951330500E175FA /* Accounts.framework in Frameworks */,
+				BB82B93A195132FC00E175FA /* libsqlite3.dylib in Frameworks */,
 				BB82B90519512FBD00E175FA /* CoreData.framework in Frameworks */,
 				BB82B90319512FBD00E175FA /* UIKit.framework in Frameworks */,
 				BB82B8FF19512FBD00E175FA /* Foundation.framework in Frameworks */,
+				BB82B9341951328300E175FA /* Parse.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -88,6 +139,7 @@
 				BB82B92319512FBE00E175FA /* BackendTutorialTests */,
 				BB82B8FD19512FBD00E175FA /* Frameworks */,
 				BB82B8FC19512FBD00E175FA /* Products */,
+				BB5EC22A1952A741008AEB48 /* BackendTutorial-Bridging-Header.h */,
 			);
 			sourceTree = "<group>";
 		};
@@ -103,6 +155,18 @@
 		BB82B8FD19512FBD00E175FA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				BB82B9491951337A00E175FA /* StoreKit.framework */,
+				BB82B9471951336F00E175FA /* QuartzCore.framework */,
+				BB82B9451951336A00E175FA /* CoreLocation.framework */,
+				BB82B9431951336100E175FA /* CFNetwork.framework */,
+				BB82B9411951335D00E175FA /* AudioToolbox.framework */,
+				BB82B93F1951334900E175FA /* libz.1.1.3.dylib */,
+				BB82B93D1951330F00E175FA /* MobileCoreServices.framework */,
+				BB82B93B1951330500E175FA /* Accounts.framework */,
+				BB82B939195132FC00E175FA /* libsqlite3.dylib */,
+				BB82B937195132F200E175FA /* Security.framework */,
+				BB82B935195132EC00E175FA /* SystemConfiguration.framework */,
+				BB82B9331951328300E175FA /* Parse.framework */,
 				BB82B8FE19512FBD00E175FA /* Foundation.framework */,
 				BB82B90019512FBD00E175FA /* CoreGraphics.framework */,
 				BB82B90219512FBD00E175FA /* UIKit.framework */,
@@ -117,6 +181,15 @@
 			children = (
 				BB82B90F19512FBE00E175FA /* CostAppDelegate.h */,
 				BB82B91019512FBE00E175FA /* CostAppDelegate.m */,
+				BB5EC2361952AA7B008AEB48 /* LoadingVC.h */,
+				BB5EC2371952AA7B008AEB48 /* LoadingVC.m */,
+				BB82B95C1951464C00E175FA /* SignupVC.h */,
+				BB82B95D1951464C00E175FA /* SignupVC.m */,
+				BB8DB6A619541552006DD663 /* LoginVC.h */,
+				BB8DB6A719541552006DD663 /* LoginVC.m */,
+				BB5EC2331952A800008AEB48 /* WallVC.h */,
+				BB5EC2341952A800008AEB48 /* WallVC.m */,
+				BB82B94B195134EE00E175FA /* Main.storyboard */,
 				BB82B91519512FBE00E175FA /* Images.xcassets */,
 				BB82B91219512FBE00E175FA /* BackendTutorial.xcdatamodeld */,
 				BB82B90719512FBD00E175FA /* Supporting Files */,
@@ -229,6 +302,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB82B94C195134EE00E175FA /* Main.storyboard in Resources */,
 				BB82B90B19512FBD00E175FA /* InfoPlist.strings in Resources */,
 				BB82B91619512FBE00E175FA /* Images.xcassets in Resources */,
 			);
@@ -249,8 +323,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB5EC2351952A800008AEB48 /* WallVC.m in Sources */,
 				BB82B91419512FBE00E175FA /* BackendTutorial.xcdatamodeld in Sources */,
 				BB82B90D19512FBE00E175FA /* main.m in Sources */,
+				BB82B95E1951464C00E175FA /* SignupVC.m in Sources */,
+				BB5EC2381952AA7B008AEB48 /* LoadingVC.m in Sources */,
+				BB8DB6A819541552006DD663 /* LoginVC.m in Sources */,
 				BB82B91119512FBE00E175FA /* CostAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -370,10 +448,19 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BackendTutorial/BackendTutorial-Prefix.pch";
 				INFOPLIST_FILE = "BackendTutorial/BackendTutorial-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BackendTutorial-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -383,10 +470,18 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				CLANG_ENABLE_MODULES = YES;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
 				GCC_PRECOMPILE_PREFIX_HEADER = YES;
 				GCC_PREFIX_HEADER = "BackendTutorial/BackendTutorial-Prefix.pch";
 				INFOPLIST_FILE = "BackendTutorial/BackendTutorial-Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "BackendTutorial-Bridging-Header.h";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
@@ -450,6 +545,7 @@
 				BB82B92F19512FBE00E175FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		BB82B93019512FBE00E175FA /* Build configuration list for PBXNativeTarget "BackendTutorialTests" */ = {
 			isa = XCConfigurationList;
@@ -458,6 +554,7 @@
 				BB82B93219512FBE00E175FA /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 

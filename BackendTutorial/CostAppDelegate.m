@@ -7,6 +7,7 @@
 //
 
 #import "CostAppDelegate.h"
+#import <Parse/Parse.h>
 
 @implementation CostAppDelegate
 
@@ -16,10 +17,41 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions
 {
-    self.window = [[UIWindow alloc] initWithFrame:[[UIScreen mainScreen] bounds]];
-    // Override point for customization after application launch.
-    self.window.backgroundColor = [UIColor whiteColor];
-    [self.window makeKeyAndVisible];
+
+    [Parse setApplicationId:@"XhBCYQfquO8FfRdl4ERsPAdr7FWx7aEY8D4Tcowu"
+                  clientKey:@"k6ITiTSxXuAOwfowOEfKhMcKIZ91Q1fUlzk5WTtI"];
+    [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
+   
+//    PFObject *testObject = [PFObject objectWithClassName:@"Test"];
+//    [testObject setObject:@"Michael" forKey:@"Name"];
+//    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
+//     {
+//         if (succeeded)
+//             NSLog(@"Object uploaded!");
+//         else
+//         {
+//             NSString *errorString = [[error userInfo] objectForKey:@"error"];
+//             NSLog(@"Error: %@", errorString);
+//         }
+//     }];
+
+//    PFQuery *query = [PFQuery queryWithClassName:@"Test"];
+//    [query whereKey:@"Name" equalTo:@"Michael"];
+//    
+//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
+//     {
+//         if (!error)
+//             NSLog(@"Successfully retrieved: %@", objects);
+//         else
+//         {
+//             NSString *errorString = [[error userInfo] objectForKey:@"error"];
+//             NSLog(@"Error: %@", errorString);
+//         }
+//     }];
+    
+    PFUser *curUser = [PFUser currentUser];
+    if (curUser)
+        NSLog(@"SDFSDFSDFSD");
     return YES;
 }
 

@@ -1,0 +1,5 @@
+Debug:
+
+If Linker Errors:
+* CostSplitter -> Build Settings -> Other Linker Flags -> [Add or delete '-ObjC' as a flag]
+* Download and include Facebook sdk.

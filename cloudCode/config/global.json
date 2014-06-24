@@ -1,0 +1,14 @@
+{
+    "applications": {
+        "Backend Tutorial": {
+            "applicationId": "XhBCYQfquO8FfRdl4ERsPAdr7FWx7aEY8D4Tcowu", 
+            "masterKey": "jpyRnvDageR6if0nLGZYdS3sBSUzS0ZkFZABIZWx"
+        }, 
+        "_default": {
+            "link": "Backend Tutorial"
+        }
+    }, 
+    "global": {
+        "parseVersion": "1.2.18"
+    }
+}

@@ -1,6 +1,6 @@
 //
 //  SignupVC.h
-//  BackendTutorial
+//  CostSplitter
 //
 //  Created by Michael Zhao on 6/17/14.
 //  Copyright (c) 2014 Michael Zhao. All rights reserved.

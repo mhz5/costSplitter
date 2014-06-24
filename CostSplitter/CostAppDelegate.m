@@ -1,6 +1,6 @@
 //
 //  CostAppDelegate.m
-//  BackendTutorial
+//  CostSplitter
 //
 //  Created by Michael Zhao on 6/17/14.
 //  Copyright (c) 2014 Michael Zhao. All rights reserved.
@@ -8,6 +8,7 @@
 
 #import "CostAppDelegate.h"
 #import <Parse/Parse.h>
+#import <Venmo-iOS-SDK/Venmo.h>
 
 @implementation CostAppDelegate
 
@@ -21,38 +22,39 @@
     [Parse setApplicationId:@"XhBCYQfquO8FfRdl4ERsPAdr7FWx7aEY8D4Tcowu"
                   clientKey:@"k6ITiTSxXuAOwfowOEfKhMcKIZ91Q1fUlzk5WTtI"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
-   
-//    PFObject *testObject = [PFObject objectWithClassName:@"Test"];
-//    [testObject setObject:@"Michael" forKey:@"Name"];
-//    [testObject saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error)
-//     {
-//         if (succeeded)
-//             NSLog(@"Object uploaded!");
-//         else
-//         {
-//             NSString *errorString = [[error userInfo] objectForKey:@"error"];
-//             NSLog(@"Error: %@", errorString);
-//         }
-//     }];
 
-//    PFQuery *query = [PFQuery queryWithClassName:@"Test"];
-//    [query whereKey:@"Name" equalTo:@"Michael"];
-//    
-//    [query findObjectsInBackgroundWithBlock:^(NSArray *objects, NSError *error)
-//     {
-//         if (!error)
-//             NSLog(@"Successfully retrieved: %@", objects);
-//         else
-//         {
-//             NSString *errorString = [[error userInfo] objectForKey:@"error"];
-//             NSLog(@"Error: %@", errorString);
-//         }
-//     }];
-    
-    PFUser *curUser = [PFUser currentUser];
-    if (curUser)
-        NSLog(@"SDFSDFSDFSD");
+    BOOL venmoSession = [Venmo startWithAppId:@"1777" secret:@"tXmuusxSDhex8FTVvUjUkQtRZmv3td7q" name:@"Cost Splitter"];
+    if (!venmoSession)
+        [self requestPermissions];
+    [[Venmo sharedInstance] setDefaultTransactionMethod:VENTransactionMethodAPI];
+
     return YES;
+}
+
+- (void)requestPermissions {
+    [[Venmo sharedInstance] requestPermissions:@[VENPermissionMakePayments,
+                                                 VENPermissionAccessProfile]
+                         withCompletionHandler:^(BOOL success, NSError *error) {
+                             if (success) {
+                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Good" message:@"User granted permissions!" delegate:nil cancelButtonTitle:@":)" otherButtonTitles:nil, nil];
+                                 [alert show];
+                                 
+                                 NSLog(@"User granted permissions!");
+                                 
+                             }
+                             else {
+                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Bad" message:@"User did not grant permissions" delegate:nil cancelButtonTitle:@":(" otherButtonTitles:nil, nil];
+                                 [alert show];
+                                 NSLog(@"User didn't grant permissions. Their loss.");
+                             }
+                         }];
+}
+- (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
+    if ([[Venmo sharedInstance] handleOpenURL:url]) {
+        return YES;
+    }
+    // You can add your app-specific url handling code here if needed
+    return NO;
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application
@@ -122,7 +124,7 @@
     if (_managedObjectModel != nil) {
         return _managedObjectModel;
     }
-    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"BackendTutorial" withExtension:@"momd"];
+    NSURL *modelURL = [[NSBundle mainBundle] URLForResource:@"CostSplitter" withExtension:@"momd"];
     _managedObjectModel = [[NSManagedObjectModel alloc] initWithContentsOfURL:modelURL];
     return _managedObjectModel;
 }
@@ -135,7 +137,7 @@
         return _persistentStoreCoordinator;
     }
     
-    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"BackendTutorial.sqlite"];
+    NSURL *storeURL = [[self applicationDocumentsDirectory] URLByAppendingPathComponent:@"CostSplitter.sqlite"];
     
     NSError *error = nil;
     _persistentStoreCoordinator = [[NSPersistentStoreCoordinator alloc] initWithManagedObjectModel:[self managedObjectModel]];

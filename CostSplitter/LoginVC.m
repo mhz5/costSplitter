@@ -75,29 +75,9 @@
 
 - (IBAction)apiCall:(id)sender {
     NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:nil];
+
     
-//    NSURL *url = [NSURL URLWithString:@"https://api.venmo.com/v1/me?access_token=wCUpZsyUJG2n42A7cr3UL4CVNpG9ckNZ"];
-//    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
-//
-//        
-//        NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
-//        NSDictionary *dict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//        
-//        NSString *userID = [[[dict objectForKey:@"data"] objectForKey:@"user"] objectForKey:@"id"];
-//        int myID = [userID intValue];
-//        NSLog(@"Completed call\nData:\n%@", dataStr);
-//        NSLog(@"Dict:%@", dict);
-//        NSLog(@"User:%@", userID);
-//        
-//       
-//                                      
-//
-//        
-//    }];
-//    
-//    [task resume];
-    
-    NSURL *url = [NSURL URLWithString:@"https://api.venmo.com/v1/users/1179328259817472900/friends?access_token=wCUpZsyUJG2n42A7cr3UL4CVNpG9ckNZ&before=1130502752829440517"];
+    NSURL *url = [NSURL URLWithString:@"https://api.venmo.com/v1/users//friends?access_token="];
     NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
         NSLog(@"Data: %@", [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding]);
     }];

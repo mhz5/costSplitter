@@ -58,7 +58,7 @@ UITableView * acTableView;
 - (void)getFriends {
     [PFCloud callFunctionInBackground:@"getFriends"
                        withParameters:@{}
-                                block:^(NSString *result, NSError *error) {
+                                block:^(NSMutableArray *result, NSError *error) {
                                     if (!error)
                                        // NSLog(@"%@", result);
                                         [self storeFriends:result];
@@ -68,17 +68,18 @@ UITableView * acTableView;
     
 }
 
-- (void)storeFriends:(NSString *) friendList {
-    NSData *data = [friendList dataUsingEncoding:NSUTF8StringEncoding];
-    NSDictionary *friendDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-    
-    NSArray *friendArr = [friendDict objectForKey:@"data"];
-    
-    NSString *friendName;
-    for (int i = 0; i < [friendArr count]; i++) {
-        friendName = [[friendArr objectAtIndex:i] objectForKey:@"display_name"];
-        [friends addObject:friendName];
-    }
+- (void)storeFriends:(NSMutableArray *) friendList {
+//    NSData *data = [friendList dataUsingEncoding:NSUTF8StringEncoding];
+//    NSDictionary *friendDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
+//    
+//    NSArray *friendArr = [friendDict objectForKey:@"data"];
+//    
+//    NSString *friendName;
+//    for (int i = 0; i < [friendArr count]; i++) {
+//        friendName = [[friendArr objectAtIndex:i] objectForKey:@"display_name"];
+//        [friends addObject:friendName];
+//    }
+    friends = friendList;
 }
 
 - (void)setupFriendAutocomplete {
@@ -116,7 +117,6 @@ UITableView * acTableView;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    NSLog(@"Autocomplete Friends: %d", autocompleteFriends.count);
     return autocompleteFriends.count;
 }
 

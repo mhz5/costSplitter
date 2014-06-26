@@ -8,11 +8,10 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WallVC : UIViewController
+@interface WallVC : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
 
-@property (strong, nonatomic) IBOutlet UILabel *greeting;
 
 - (IBAction)logout:(id)sender;
-- (IBAction)payAlanOneDollar:(id)sender;
+@property (strong, nonatomic) IBOutlet UITextField *friendTextField;
 
 @end

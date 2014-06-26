@@ -28,7 +28,7 @@
                         <viewControllerLayoutGuide type="bottom" id="OA7-Ld-W7L"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="KmC-xJ-ai9">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
@@ -51,7 +51,7 @@
                         <viewControllerLayoutGuide type="bottom" id="vUL-ft-vly"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="XAo-R0-nmE">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6zc-s7-pRt">
@@ -88,30 +88,13 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ygj-SD-o4o">
-                                <rect key="frame" x="92" y="407" width="166" height="30"/>
+                                <rect key="frame" x="79" y="393" width="166" height="30"/>
                                 <state key="normal" title="Remove Permissions">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
                                     <action selector="buttonPress:" destination="2JM-vn-ubk" eventType="touchUpInside" id="LMk-Lc-A7O"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="X10-kS-vo0">
-                                <rect key="frame" x="135" y="358" width="52" height="30"/>
-                                <state key="normal" title="API call">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="apiCall:" destination="2JM-vn-ubk" eventType="touchUpInside" id="wSP-Et-vXY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0sW-f2-CXl">
-                                <rect key="frame" x="142" y="320" width="35" height="30"/>
-                                <state key="normal" title="Hello">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="hello:" destination="2JM-vn-ubk" eventType="touchUpInside" id="x0N-6T-lmX"/>
+                                    <action selector="cancelPermissions:" destination="2JM-vn-ubk" eventType="touchUpInside" id="FZc-mj-IZz"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -137,24 +120,17 @@
                         <viewControllerLayoutGuide type="bottom" id="OF8-kC-RF6"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="CrM-Cd-hgT">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <label opaque="NO" clipsSubviews="YES" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="GAf-df-Vmt">
-                                <rect key="frame" x="66" y="212" width="188" height="56"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Rt2-u1-3Ic">
-                                <rect key="frame" x="130" y="334" width="61" height="30"/>
-                                <state key="normal" title="Pay Alan">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
+                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a friend" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sPF-0y-sZz">
+                                <rect key="frame" x="68" y="72" width="184" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
                                 <connections>
-                                    <action selector="payAlanOneDollar:" destination="3Rr-QW-1zr" eventType="touchUpInside" id="vtk-Ba-lbp"/>
+                                    <outlet property="delegate" destination="3Rr-QW-1zr" id="3Hw-Hn-mUA"/>
                                 </connections>
-                            </button>
+                            </textField>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -166,7 +142,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="greeting" destination="GAf-df-Vmt" id="J6H-ec-FjD"/>
+                        <outlet property="friendTextField" destination="sPF-0y-sZz" id="lph-HI-bKQ"/>
                         <segue destination="2JM-vn-ubk" kind="push" identifier="Logout" id="h7M-J9-4Xh"/>
                     </connections>
                 </viewController>
@@ -183,7 +159,7 @@
                         <viewControllerLayoutGuide type="bottom" id="YVN-3n-Y7w"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Lib-oM-heY">
-                        <rect key="frame" x="0.0" y="0.0" width="320" height="480"/>
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="User" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="vOJ-Qv-LPc">
@@ -224,10 +200,10 @@
     <simulatedMetricsContainer key="defaultSimulatedMetrics">
         <simulatedStatusBarMetrics key="statusBar"/>
         <simulatedOrientationMetrics key="orientation"/>
-        <simulatedScreenMetrics key="destination"/>
+        <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
         <segue reference="h7M-J9-4Xh"/>
-        <segue reference="KsO-9m-mgS"/>
+        <segue reference="Mes-O2-m4X"/>
     </inferredMetricsTieBreakers>
 </document>

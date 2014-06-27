@@ -8,10 +8,12 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WallVC : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate>
+@interface WallVC : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIWebViewDelegate, NSURLConnectionDelegate>
 
 
 - (IBAction)logout:(id)sender;
+- (IBAction)cancelPermissions:(id)sender;
 @property (strong, nonatomic) IBOutlet UITextField *friendTextField;
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
 
 @end

@@ -20,6 +20,9 @@
 NSMutableArray *friends;
 NSMutableArray *autocompleteFriends;
 UITableView * acTableView;
+PFUser *curUser;
+NSString *code;
+NSString *token;
 
 - (instancetype)initWithNibName:(NSString *)nibNameOrNil bundle:(NSBundle *)nibBundleOrNil
 {
@@ -34,12 +37,36 @@ UITableView * acTableView;
 {
     [super viewDidLoad];
     
+    curUser = [PFUser currentUser];
+    
+    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.venmo.com/v1/oauth/authorize?client_id=1777&scope=access_friends%20access_profile%20access_email%20access_phone%20access_balance&response_type=code"]]];
+    _webView.scalesPageToFit = YES;
     // Array to store all friend names and profile photos.
     friends = [[NSMutableArray alloc] init];
     autocompleteFriends = [[NSMutableArray alloc] init];
     [self getFriends];
     [self setupFriendAutocomplete];
-    // PFUser *curUser = [PFUser currentUser];
+}
+- (void)webViewDidFinishLoad:(UIWebView *)aWebView
+{
+    NSString *url = _webView.request.URL.absoluteString;
+    // Extract the code. Use code to get access token.
+    NSArray *split = [url componentsSeparatedByString:@"code="];
+    if (split.count > 1) {
+        code = [split objectAtIndex:1];
+//        NSLog(@"Code: %@", code);
+        [self getToken:code];
+    }
+}
+
+- (void)getToken:(NSString *) code {
+    [PFCloud callFunctionInBackground:@"getAccessToken"
+                       withParameters:@{@"code":code,
+                                        @"userID":curUser.objectId}
+                                block:^(NSString *result, NSError *error) {
+                                    if (!error)
+                                        token = result;
+                                }];
 }
 
 - (void)didReceiveMemoryWarning
@@ -48,16 +75,25 @@ UITableView * acTableView;
     // Dispose of any resources that can be recreated.
 }
 
-
-
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
     [self performSegueWithIdentifier:@"Logout" sender:self];
 }
 
+- (IBAction)cancelPermissions:(id)sender {
+    [[Venmo sharedInstance] logout];
+    if ([[Venmo sharedInstance] isSessionValid] == false) {
+        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log Out" message:@"No longer have Venmo permissions" delegate:nil cancelButtonTitle:@"What a shame" otherButtonTitles:nil, nil];
+        
+        [alert show];
+    }
+}
+
 - (void)getFriends {
     [PFCloud callFunctionInBackground:@"getFriends"
-                       withParameters:@{}
+                       withParameters:@{@"userID":curUser.objectId}
+     
+     
                                 block:^(NSMutableArray *result, NSError *error) {
                                     if (!error)
                                        // NSLog(@"%@", result);
@@ -65,23 +101,13 @@ UITableView * acTableView;
                                     for (int i = 0; i < [friends count]; i++)
                                         NSLog(@"%@", [friends objectAtIndex:i]);
                                 }];
-    
 }
 
 - (void)storeFriends:(NSMutableArray *) friendList {
-//    NSData *data = [friendList dataUsingEncoding:NSUTF8StringEncoding];
-//    NSDictionary *friendDict = [NSJSONSerialization JSONObjectWithData:data options:0 error:nil];
-//    
-//    NSArray *friendArr = [friendDict objectForKey:@"data"];
-//    
-//    NSString *friendName;
-//    for (int i = 0; i < [friendArr count]; i++) {
-//        friendName = [[friendArr objectAtIndex:i] objectForKey:@"display_name"];
-//        [friends addObject:friendName];
-//    }
     friends = friendList;
 }
 
+#pragma mark - Autocomplete
 - (void)setupFriendAutocomplete {
     acTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 120, 320, 200) style:UITableViewStylePlain];
     acTableView.delegate = self;
@@ -89,6 +115,14 @@ UITableView * acTableView;
     acTableView.scrollEnabled = YES;
     acTableView.hidden = YES;
     [self.view addSubview:acTableView];
+}
+
+- (BOOL)textFieldShouldReturn:(UITextField *)textField{
+    
+    [textField resignFirstResponder];
+    
+    acTableView.hidden = YES;
+    return YES;
 }
 
 - (BOOL)textField:(UITextField *)textField
@@ -120,13 +154,7 @@ UITableView * acTableView;
     return autocompleteFriends.count;
 }
 
--(BOOL) textFieldShouldReturn:(UITextField *)textField{
-    
-    [textField resignFirstResponder];
-    
-    acTableView.hidden = YES;
-    return YES;
-}
+
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath {
     UITableViewCell *cell = nil;

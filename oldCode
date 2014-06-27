@@ -1,0 +1,33 @@
+HTTP REQUEST
+
+//    NSString *url = [NSString stringWithFormat:@"https://api.venmo.com/v1/oauth/access_token"];
+//    
+//    
+//    
+//    
+//    NSString *reqStr = [NSString stringWithFormat:@"client_id=1777&client_secret=tXmuusxSDhex8FTVvUjUkQtRZmv3td7q&code=%@", code];
+//    NSData *reqData = [ NSData dataWithBytes: [ reqStr UTF8String ] length: [ reqStr length ] ];
+//
+//    
+//    NSMutableURLRequest *req = [NSMutableURLRequest requestWithURL:[NSURL URLWithString:url]
+//                                         cachePolicy:NSURLRequestUseProtocolCachePolicy timeoutInterval:15];
+//
+//    NSDictionary *body = [[NSDictionary alloc] initWithObjectsAndKeys:code, @"code", @"tXmuusxSDhex8FTVvUjUkQtRZmv3td7", @"client_secret", @"1777", @"client_id", nil];
+//    NSData *data = [NSJSONSerialization dataWithJSONObject:body options:0 error:nil];
+//    NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//    NSLog(@"Data to POST: %@", dataStr);
+//
+//    
+//    [req setHTTPMethod:@"POST"];
+//    [req setHTTPBody:reqData];
+//    NSURLSession *session = [NSURLSession sessionWithConfiguration:[NSURLSessionConfiguration defaultSessionConfiguration] delegate:nil delegateQueue:nil];
+//    NSURLSessionDataTask *task = [session dataTaskWithRequest:req completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+//        NSLog(@"SUCCESS!");
+//        NSString *dataStr = [[NSString alloc] initWithData:data encoding:NSUTF8StringEncoding];
+//        NSLog(@"%@", dataStr);
+//    }];
+//    
+//    [task resume];
+
+=============================================================================
+

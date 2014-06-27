@@ -16,7 +16,4 @@
 
 @property (strong, nonatomic) IBOutlet UITextField *passText;
 
-- (IBAction)cancelPermissions:(id)sender;
-- (IBAction)apiCall:(id)sender;
-
 @end

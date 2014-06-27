@@ -23,32 +23,13 @@
                   clientKey:@"k6ITiTSxXuAOwfowOEfKhMcKIZ91Q1fUlzk5WTtI"];
     [PFAnalytics trackAppOpenedWithLaunchOptions:launchOptions];
 
-    BOOL venmoSession = [Venmo startWithAppId:@"1777" secret:@"tXmuusxSDhex8FTVvUjUkQtRZmv3td7q" name:@"Cost Splitter"];
-    if (!venmoSession)
-        [self requestPermissions];
+    [Venmo startWithAppId:@"1777" secret:@"tXmuusxSDhex8FTVvUjUkQtRZmv3td7q" name:@"Cost Splitter"];
+
     [[Venmo sharedInstance] setDefaultTransactionMethod:VENTransactionMethodAPI];
 
     return YES;
 }
 
-- (void)requestPermissions {
-    [[Venmo sharedInstance] requestPermissions:@[VENPermissionMakePayments,
-                                                 VENPermissionAccessProfile]
-                         withCompletionHandler:^(BOOL success, NSError *error) {
-                             if (success) {
-                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Good" message:@"User granted permissions!" delegate:nil cancelButtonTitle:@":)" otherButtonTitles:nil, nil];
-                                 [alert show];
-                                 
-                                 NSLog(@"User granted permissions!");
-                                 
-                             }
-                             else {
-                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Bad" message:@"User did not grant permissions" delegate:nil cancelButtonTitle:@":(" otherButtonTitles:nil, nil];
-                                 [alert show];
-                                 NSLog(@"User didn't grant permissions. Their loss.");
-                             }
-                         }];
-}
 - (BOOL)application:(UIApplication *)application openURL:(NSURL *)url sourceApplication:(NSString *)sourceApplication annotation:(id)annotation {
     if ([[Venmo sharedInstance] handleOpenURL:url]) {
         return YES;
@@ -74,8 +55,45 @@
     // Called as part of the transition from the background to the inactive state; here you can undo many of the changes made on entering the background.
 }
 
+- (void)requestPermissions {
+    [[Venmo sharedInstance] requestPermissions:@[VENPermissionAccessFriends,
+                                                 VENPermissionAccessProfile,
+                                                 VENPermissionAccessPhone,
+                                                 VENPermissionAccessEmail,
+                                                 VENPermissionAccessBalance,
+                                                 VENPermissionMakePayments]
+                         withCompletionHandler:^(BOOL success, NSError *error) {
+                             if (success) {
+                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Good" message:@"User granted permissions!" delegate:nil cancelButtonTitle:@":)" otherButtonTitles:nil, nil];
+                                 [alert show];
+                                 
+                                 PFUser *curUser = [PFUser currentUser];
+                                 NSLog(@"User granted permissions!");
+                                 NSLog(@"Current user: %@", curUser[@"username"]);
+                                 curUser[@"access_token"] = [Venmo sharedInstance].session.accessToken;
+                                 [curUser saveInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
+                                     if (succeeded)
+                                         NSLog(@"Successfully stored user's access token.");
+                                     else
+                                         NSLog(@"ERROR: Couldn't store user's access token.");
+                                 }];
+
+                             }
+                             else {
+                                 UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Bad" message:@"User did not grant permissions" delegate:nil cancelButtonTitle:@":(" otherButtonTitles:nil, nil];
+                                 [alert show];
+                                 NSLog(@"User didn't grant permissions. Their loss.");
+                             }
+                         }];
+}
+
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+//    if ([[Venmo sharedInstance] isSessionValid] == false)
+//        [self requestPermissions];
+
+//    NSLog(@"%@", [Venmo sharedInstance].session.accessToken);
+//    NSLog(@"Expiration date: %@", [Venmo sharedInstance].session.expirationDate);
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 

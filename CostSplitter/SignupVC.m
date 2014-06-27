@@ -52,7 +52,6 @@
     PFUser *user = [PFUser user];
     user.username = _userText.text;
     user.password = _passText.text;
-
     
     [user signUpInBackgroundWithBlock:^(BOOL succeeded, NSError *error) {
         if (!error) {

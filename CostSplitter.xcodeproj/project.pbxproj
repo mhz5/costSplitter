@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		49BB4FDD118147E7906915B8 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C7210FF8ACC74B5BBCB2B48A /* libPods.a */; };
+		BB095191195D4CFF009B67CA /* oldCode in Resources */ = {isa = PBXBuildFile; fileRef = BB095190195D4CFF009B67CA /* oldCode */; };
 		BB5EC2351952A800008AEB48 /* WallVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5EC2341952A800008AEB48 /* WallVC.m */; };
 		BB5EC2381952AA7B008AEB48 /* LoadingVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB5EC2371952AA7B008AEB48 /* LoadingVC.m */; };
 		BB82B8FF19512FBD00E175FA /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B8FE19512FBD00E175FA /* Foundation.framework */; };
@@ -64,6 +65,7 @@
 
 /* Begin PBXFileReference section */
 		5AB9BA8880A64D0BAE0E8F6F /* Pods.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.xcconfig; path = Pods/Pods.xcconfig; sourceTree = "<group>"; };
+		BB095190195D4CFF009B67CA /* oldCode */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = oldCode; sourceTree = "<group>"; };
 		BB5EC2331952A800008AEB48 /* WallVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WallVC.h; sourceTree = "<group>"; };
 		BB5EC2341952A800008AEB48 /* WallVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WallVC.m; sourceTree = "<group>"; };
 		BB5EC2361952AA7B008AEB48 /* LoadingVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoadingVC.h; sourceTree = "<group>"; };
@@ -154,6 +156,7 @@
 			isa = PBXGroup;
 			children = (
 				BBDB21381954314F00A37687 /* notes */,
+				BB095190195D4CFF009B67CA /* oldCode */,
 				BB82B90619512FBD00E175FA /* CostSplitter */,
 				BB82B92319512FBE00E175FA /* CostSplitterTests */,
 				BB82B8FD19512FBD00E175FA /* Frameworks */,
@@ -203,12 +206,7 @@
 			children = (
 				BB82B90F19512FBE00E175FA /* CostAppDelegate.h */,
 				BB82B91019512FBE00E175FA /* CostAppDelegate.m */,
-				BB5EC2361952AA7B008AEB48 /* LoadingVC.h */,
-				BB5EC2371952AA7B008AEB48 /* LoadingVC.m */,
-				BB82B95C1951464C00E175FA /* SignupVC.h */,
-				BB82B95D1951464C00E175FA /* SignupVC.m */,
-				BB8DB6A619541552006DD663 /* LoginVC.h */,
-				BB8DB6A719541552006DD663 /* LoginVC.m */,
+				BB932D73195D1B4300E19491 /* LogSignIn */,
 				BB5EC2331952A800008AEB48 /* WallVC.h */,
 				BB5EC2341952A800008AEB48 /* WallVC.m */,
 				BB82B94B195134EE00E175FA /* Main.storyboard */,
@@ -246,6 +244,19 @@
 				BB82B92619512FBE00E175FA /* InfoPlist.strings */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		BB932D73195D1B4300E19491 /* LogSignIn */ = {
+			isa = PBXGroup;
+			children = (
+				BB5EC2361952AA7B008AEB48 /* LoadingVC.h */,
+				BB5EC2371952AA7B008AEB48 /* LoadingVC.m */,
+				BB82B95C1951464C00E175FA /* SignupVC.h */,
+				BB82B95D1951464C00E175FA /* SignupVC.m */,
+				BB8DB6A619541552006DD663 /* LoginVC.h */,
+				BB8DB6A719541552006DD663 /* LoginVC.m */,
+			);
+			name = LogSignIn;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +343,7 @@
 				BB82B90B19512FBD00E175FA /* InfoPlist.strings in Resources */,
 				BBDB21391954314F00A37687 /* notes in Resources */,
 				BB82B91619512FBE00E175FA /* Images.xcassets in Resources */,
+				BB095191195D4CFF009B67CA /* oldCode in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

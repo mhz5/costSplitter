@@ -10,7 +10,10 @@ function getFriends(url, token, friends, options) {
 		actualURL = url + '?access_token=' + token;
 	else
 		actualURL = url + '&access_token=' + token;
+	
+	actualURL = actualURL + '&limit=50';
 
+	console.log(actualURL);
 	Parse.Cloud.httpRequest({
 		url: actualURL,
 		success: function(httpResponse) {
@@ -20,7 +23,7 @@ function getFriends(url, token, friends, options) {
 			if (nextPage == null)
 				options.success(friends);
 
-			console.log(nextPage + token);
+			// console.log('GET: ' + nextPage + token);
 			
 			for (i in data.data) {
 				var obj = data.data[i];
@@ -31,18 +34,9 @@ function getFriends(url, token, friends, options) {
 			}
 
 			getFriends(nextPage, token, friends, options);
-			console.log('Called getFriends again');
-			// if (firstCall)
-			// 	options.success(arr)
-			// else
-			// 	return arr.concat(arr2);
 		},
 		error: function(httpResponse) {
 			options.error("Request failed with response code " + httpResponse.status);
 		}
 	});
-}
-
-function successFun(input){
-	response.success(input);
 }

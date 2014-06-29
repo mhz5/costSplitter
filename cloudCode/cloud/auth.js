@@ -1,6 +1,5 @@
-exports.getAccessToken = function(code, userID, options) {
+exports.requestAccessToken = function(code, userID, options) {
 	var baseUrl = 'https://api.venmo.com/v1/oauth/access_token'
-	var token = '';
 
 	Parse.Cloud.httpRequest({
 		method: 'POST',
@@ -13,16 +12,18 @@ exports.getAccessToken = function(code, userID, options) {
 		success: function(httpResponse) {
 			
 			var data = JSON.parse(httpResponse.text);
-			token = data.access_token;
+			var access_token = data.access_token;
+			var refresh_token = data.refresh_token;
+
 			var user = Parse.Object.extend("User");
 			var query = new Parse.Query(user);
 			query.get(userID, {
 				success: function(res) {
-					res.set('access_token', token);
+					res.set('access_token', access_token);
+					res.set('refresh_token', refresh_token);
 					res.save();
 					console.log('Saved user');
-					options.success(token);
-
+					options.success(access_token);
 				},
 				error: function(object, error) {
 					console.error("Error!!");

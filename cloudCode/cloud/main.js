@@ -26,11 +26,11 @@ Parse.Cloud.define("getFriends", function(request, response) {
 });
 
 
-Parse.Cloud.define("getAccessToken", function(request, response) {
+Parse.Cloud.define("requestAccessToken", function(request, response) {
 	var code = request.params.code;
 	var userID = request.params.userID;
 	console.log(userID);
-	auth.getAccessToken(code, userID,
+	auth.requestAccessToken(code, userID,
 				{success: function(input) {response.success(input)},
 				error: function(input) {response.error(input)}});
 });

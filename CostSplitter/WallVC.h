@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface WallVC : UIViewController <UITableViewDelegate, UITableViewDataSource, UITextFieldDelegate, UIWebViewDelegate, NSURLConnectionDelegate>
+@interface WallVC : UIViewController <UITextFieldDelegate, UIWebViewDelegate, NSURLConnectionDelegate>
 
 
 - (IBAction)logout:(id)sender;

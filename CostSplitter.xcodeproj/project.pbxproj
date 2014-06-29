@@ -44,6 +44,7 @@
 		BBDB213419542F3000A37687 /* libz.1.2.5.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = BBDB213319542F3000A37687 /* libz.1.2.5.dylib */; };
 		BBDB21371954310600A37687 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBDB21361954310600A37687 /* Social.framework */; };
 		BBDB21391954314F00A37687 /* notes in Resources */ = {isa = PBXBuildFile; fileRef = BBDB21381954314F00A37687 /* notes */; };
+		BBF81F52195FBF5000E6DC59 /* FriendDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = BBF81F51195FBF5000E6DC59 /* FriendDelegate.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -108,6 +109,8 @@
 		BBDB213319542F3000A37687 /* libz.1.2.5.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.1.2.5.dylib; path = usr/lib/libz.1.2.5.dylib; sourceTree = SDKROOT; };
 		BBDB21361954310600A37687 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		BBDB21381954314F00A37687 /* notes */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = notes; sourceTree = "<group>"; };
+		BBF81F50195FBF5000E6DC59 /* FriendDelegate.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = FriendDelegate.h; sourceTree = "<group>"; };
+		BBF81F51195FBF5000E6DC59 /* FriendDelegate.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = FriendDelegate.m; sourceTree = "<group>"; };
 		C7210FF8ACC74B5BBCB2B48A /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
@@ -209,6 +212,8 @@
 				BB932D73195D1B4300E19491 /* LogSignIn */,
 				BB5EC2331952A800008AEB48 /* WallVC.h */,
 				BB5EC2341952A800008AEB48 /* WallVC.m */,
+				BBF81F50195FBF5000E6DC59 /* FriendDelegate.h */,
+				BBF81F51195FBF5000E6DC59 /* FriendDelegate.m */,
 				BB82B94B195134EE00E175FA /* Main.storyboard */,
 				BB82B91519512FBE00E175FA /* Images.xcassets */,
 				BB82B91219512FBE00E175FA /* CostSplitter.xcdatamodeld */,
@@ -401,6 +406,7 @@
 				BB82B95E1951464C00E175FA /* SignupVC.m in Sources */,
 				BB5EC2381952AA7B008AEB48 /* LoadingVC.m in Sources */,
 				BB8DB6A819541552006DD663 /* LoginVC.m in Sources */,
+				BBF81F52195FBF5000E6DC59 /* FriendDelegate.m in Sources */,
 				BB82B91119512FBE00E175FA /* CostAppDelegate.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

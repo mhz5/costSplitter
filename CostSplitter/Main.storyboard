@@ -104,7 +104,7 @@
         <!--Wall VC-->
         <scene sceneID="6AV-nN-JOo">
             <objects>
-                <viewController id="3Rr-QW-1zr" userLabel="Wall VC" customClass="WallVC" sceneMemberID="viewController">
+                <viewController automaticallyAdjustsScrollViewInsets="NO" id="3Rr-QW-1zr" userLabel="Wall VC" customClass="WallVC" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="sYs-ww-di2"/>
                         <viewControllerLayoutGuide type="bottom" id="OF8-kC-RF6"/>
@@ -113,30 +113,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IfX-VG-5tA">
-                                <rect key="frame" x="67" y="457" width="187" height="30"/>
-                                <state key="normal" title="Cancel Venmo Permissions">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="cancelPermissions:" destination="3Rr-QW-1zr" eventType="touchUpInside" id="6QZ-Mk-3XM"/>
-                                </connections>
-                            </button>
-                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="GcP-Vr-8KH">
-                                <rect key="frame" x="0.0" y="200" width="320" height="200"/>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <connections>
-                                    <outlet property="delegate" destination="3Rr-QW-1zr" id="NCv-Tv-VXS"/>
-                                </connections>
-                            </webView>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Search for a friend" minimumFontSize="17" clearButtonMode="unlessEditing" translatesAutoresizingMaskIntoConstraints="NO" id="sPF-0y-sZz">
-                                <rect key="frame" x="68" y="73" width="184" height="30"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                <textInputTraits key="textInputTraits" autocapitalizationType="words" autocorrectionType="no" spellCheckingType="no" keyboardType="namePhonePad" keyboardAppearance="light" returnKeyType="done" enablesReturnKeyAutomatically="YES"/>
-                                <connections>
-                                    <outlet property="delegate" destination="3Rr-QW-1zr" id="3Hw-Hn-mUA"/>
-                                </connections>
-                            </textField>
+                            <textView autoresizesSubviews="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" scrollEnabled="NO" text="asdf" translatesAutoresizingMaskIntoConstraints="NO" id="BQc-p9-CbQ">
+                                <rect key="frame" x="40" y="95" width="240" height="71"/>
+                                <color key="backgroundColor" red="1" green="0.40000000600000002" blue="0.40000000600000002" alpha="1" colorSpace="calibratedRGB"/>
+                                <accessibility key="accessibilityConfiguration" label="Create a group"/>
+                                <fontDescription key="fontDescription" name=".LucidaGrandeUI" family=".Lucida Grande UI" pointSize="11"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences" returnKeyType="done"/>
+                            </textView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
@@ -148,14 +131,43 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <outlet property="friendTextField" destination="sPF-0y-sZz" id="lph-HI-bKQ"/>
-                        <outlet property="webView" destination="GcP-Vr-8KH" id="aIx-Fj-OTG"/>
+                        <outlet property="groupTextView" destination="BQc-p9-CbQ" id="rIm-AW-JDY"/>
                         <segue destination="2JM-vn-ubk" kind="push" identifier="Logout" id="h7M-J9-4Xh"/>
+                        <segue destination="mXp-kO-T4Q" kind="push" identifier="SeekVenmoPermissions" id="fvM-i6-paw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hgo-cQ-RO1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1072" y="-528"/>
+        </scene>
+        <!--Venmo PermissionsVC-->
+        <scene sceneID="89j-3W-uTl">
+            <objects>
+                <viewController id="mXp-kO-T4Q" customClass="VenmoPermissionsVC" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="O01-7F-VGl"/>
+                        <viewControllerLayoutGuide type="bottom" id="Ycw-If-lE7"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="fTQ-QG-nz9">
+                        <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Wb5-mc-PBu">
+                                <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                            </webView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="AHO-Aj-Wef"/>
+                    <connections>
+                        <outlet property="webView" destination="Wb5-mc-PBu" id="LBa-Xr-ivD"/>
+                        <segue destination="3Rr-QW-1zr" kind="push" identifier="BackToWall" id="o4l-aA-oev"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="JRY-Pa-pBk" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1072" y="-1238"/>
         </scene>
         <!--Sign In VC-->
         <scene sceneID="onx-DX-oh0">
@@ -210,7 +222,7 @@
         <simulatedScreenMetrics key="destination" type="retina4"/>
     </simulatedMetricsContainer>
     <inferredMetricsTieBreakers>
-        <segue reference="KsO-9m-mgS"/>
         <segue reference="h7M-J9-4Xh"/>
+        <segue reference="as8-GZ-HD5"/>
     </inferredMetricsTieBreakers>
 </document>

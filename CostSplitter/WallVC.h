@@ -7,13 +7,15 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "FriendDelegate.h"
 
-@interface WallVC : UIViewController <UITextFieldDelegate, UIWebViewDelegate, NSURLConnectionDelegate>
+@interface WallVC : UIViewController <UITextFieldDelegate, NSURLConnectionDelegate>
 
 
 - (IBAction)logout:(id)sender;
-- (IBAction)cancelPermissions:(id)sender;
-@property (strong, nonatomic) IBOutlet UITextField *friendTextField;
-@property (strong, nonatomic) IBOutlet UIWebView *webView;
+
+- (void)setAccessToken:(NSString *)token;
+
+@property (strong, nonatomic) IBOutlet UITextView *groupTextView;
 
 @end

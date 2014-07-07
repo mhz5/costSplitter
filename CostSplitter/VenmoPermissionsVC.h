@@ -7,7 +7,14 @@
 //
 
 #import <UIKit/UIKit.h>
+#import <Parse/Parse.h>
 
-@interface VenmoPermissionsVC : UIViewController
+@interface VenmoPermissionsVC : UIViewController <UIWebViewDelegate>
+
+
+@property (strong, nonatomic) IBOutlet UIWebView *webView;
+
+- (void)setPFUser:(PFUser *)user;
+
 
 @end

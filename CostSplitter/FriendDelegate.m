@@ -9,19 +9,20 @@
 #import "FriendDelegate.h"
 
 @implementation FriendDelegate
+NSDictionary *_friends;
+NSMutableArray *_autocompleteFriends;
 
-NSMutableArray *friends;
-NSMutableArray *autocompleteFriends;
-
-- (instancetype)initWithTableView:(UITableView *)table andFriends:(NSMutableArray *)arr
+- (instancetype)initWithTableView:(UITableView *)table andFriends:(NSDictionary *)friends modifyingTextView:(UITextView *)textView
 {
     self = [super initWithStyle:UITableViewStylePlain];
     if (self) {
         self.tableView = table;
         self.tableView.scrollEnabled = YES;
         self.tableView.hidden = YES;
-        friends = arr;
-        autocompleteFriends = [[NSMutableArray alloc] init];
+        _friends = friends;
+
+        _autocompleteFriends = [[NSMutableArray alloc] init];
+        _textView = textView;
     }
     return self;
 }
@@ -29,12 +30,6 @@ NSMutableArray *autocompleteFriends;
 - (void)viewDidLoad
 {
     [super viewDidLoad];
-    
-    // Uncomment the following line to preserve selection between presentations.
-    // self.clearsSelectionOnViewWillAppear = NO;
-    
-    // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-    // self.navigationItem.rightBarButtonItem = self.editButtonItem;
 }
 
 - (void)didReceiveMemoryWarning
@@ -60,27 +55,57 @@ NSMutableArray *autocompleteFriends;
                 initWithStyle:UITableViewCellStyleDefault reuseIdentifier:AutoCompleteRowIdentifier];
     }
     
-    cell.textLabel.text = [autocompleteFriends objectAtIndex:indexPath.row];
+    cell.textLabel.text = [_autocompleteFriends objectAtIndex:indexPath.row];
     return cell;
 }
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section {
-    return autocompleteFriends.count;
+    return _autocompleteFriends.count;
 }
 
+#pragma mark - Table view delegate
+- (void)tableView:(UITableView *)tableView didSelectRowAtIndexPath:(NSIndexPath *)indexPath {
+    NSString *curText = _textView.text;
+    _textView.text = [NSString stringWithFormat:@"%@%@, ", curText, [self.tableView cellForRowAtIndexPath:indexPath].textLabel.text];
+}
+
+#pragma mark - autocomplete friends
 // Refresh the autocomplete friends array.
 - (void)showAutocompleteFriendsFromSubstring:(NSString *)substring{
-    [autocompleteFriends removeAllObjects];
+    [_autocompleteFriends removeAllObjects];
     
-    for (NSString *curString in friends) {
+    for (NSString *curString in [_friends allKeys]) {
         NSRange substringRange = [curString.lowercaseString rangeOfString:substring.lowercaseString];
         if (substringRange.location == 0)
-            [autocompleteFriends addObject:curString];
-
+            [_autocompleteFriends addObject:curString];
     }
     
     self.tableView.hidden = NO;
     [self.tableView reloadData];
 }
+
+#pragma mark - UITextViewDelegate methods
+
+- (void)textViewDidBeginEditing:(UITextView *)textView {
+    textView.text = @"";
+}
+
+- (BOOL)textView:(UITextView *)textView shouldChangeTextInRange:(NSRange)range replacementText:(NSString *)text {
+    
+    // To disable keyboard.
+    if([text isEqualToString:@"\n"]) {
+        [textView resignFirstResponder];
+        self.tableView.hidden = YES;
+        return NO;
+    }
+    
+    NSString *substring = [NSString stringWithString:textView.text];
+    substring = [substring stringByReplacingCharactersInRange:range withString:text];
+    
+    [self showAutocompleteFriendsFromSubstring:substring];
+    
+    return YES;
+}
+
 
 @end

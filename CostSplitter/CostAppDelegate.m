@@ -89,6 +89,8 @@
 
 - (void)applicationDidBecomeActive:(UIApplication *)application
 {
+    [self becomeFirstResponder];
+
 //    if ([[Venmo sharedInstance] isSessionValid] == false)
 //        [self requestPermissions];
 
@@ -97,6 +99,15 @@
     // Restart any tasks that were paused (or not yet started) while the application was inactive. If the application was previously in the background, optionally refresh the user interface.
 }
 
+- (void)motionBegan:(UIEventSubtype)motion withEvent:(UIEvent *)event {
+    if (motion == UIEventSubtypeMotionShake)
+        NSLog(@"Shake!!");
+    
+}
+
+-(BOOL)canBecomeFirstResponder {
+    return YES;
+}
 - (void)applicationWillTerminate:(UIApplication *)application
 {
     // Saves changes in the application's managed object context before the application terminates.

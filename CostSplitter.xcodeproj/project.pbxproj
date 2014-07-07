@@ -38,6 +38,7 @@
 		BB82B94A1951337A00E175FA /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BB82B9491951337A00E175FA /* StoreKit.framework */; };
 		BB82B94C195134EE00E175FA /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BB82B94B195134EE00E175FA /* Main.storyboard */; };
 		BB82B95E1951464C00E175FA /* SignupVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB82B95D1951464C00E175FA /* SignupVC.m */; };
+		BB86100B195FFDBA0041C13D /* VenmoPermissionsVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB86100A195FFDBA0041C13D /* VenmoPermissionsVC.m */; };
 		BB8DB6A819541552006DD663 /* LoginVC.m in Sources */ = {isa = PBXBuildFile; fileRef = BB8DB6A719541552006DD663 /* LoginVC.m */; };
 		BBB9A4F11956A64B00D890A1 /* FacebookSDK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBB9A4F01956A64B00D890A1 /* FacebookSDK.framework */; };
 		BBDB213219542EDF00A37687 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BBDB213119542EDF00A37687 /* Parse.framework */; };
@@ -102,6 +103,8 @@
 		BB82B94B195134EE00E175FA /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		BB82B95C1951464C00E175FA /* SignupVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SignupVC.h; sourceTree = "<group>"; };
 		BB82B95D1951464C00E175FA /* SignupVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SignupVC.m; sourceTree = "<group>"; };
+		BB861009195FFDBA0041C13D /* VenmoPermissionsVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = VenmoPermissionsVC.h; sourceTree = "<group>"; };
+		BB86100A195FFDBA0041C13D /* VenmoPermissionsVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = VenmoPermissionsVC.m; sourceTree = "<group>"; };
 		BB8DB6A619541552006DD663 /* LoginVC.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = LoginVC.h; sourceTree = "<group>"; };
 		BB8DB6A719541552006DD663 /* LoginVC.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = LoginVC.m; sourceTree = "<group>"; };
 		BBB9A4F01956A64B00D890A1 /* FacebookSDK.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FacebookSDK.framework; sourceTree = "<group>"; };
@@ -209,7 +212,8 @@
 			children = (
 				BB82B90F19512FBE00E175FA /* CostAppDelegate.h */,
 				BB82B91019512FBE00E175FA /* CostAppDelegate.m */,
-				BB932D73195D1B4300E19491 /* LogSignIn */,
+				BB932D73195D1B4300E19491 /* Log&SignIn */,
+				BBA136CA196131EB00CAC5B2 /* VenmoPermissions */,
 				BB5EC2331952A800008AEB48 /* WallVC.h */,
 				BB5EC2341952A800008AEB48 /* WallVC.m */,
 				BBF81F50195FBF5000E6DC59 /* FriendDelegate.h */,
@@ -251,7 +255,7 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
-		BB932D73195D1B4300E19491 /* LogSignIn */ = {
+		BB932D73195D1B4300E19491 /* Log&SignIn */ = {
 			isa = PBXGroup;
 			children = (
 				BB5EC2361952AA7B008AEB48 /* LoadingVC.h */,
@@ -261,7 +265,16 @@
 				BB8DB6A619541552006DD663 /* LoginVC.h */,
 				BB8DB6A719541552006DD663 /* LoginVC.m */,
 			);
-			name = LogSignIn;
+			name = "Log&SignIn";
+			sourceTree = "<group>";
+		};
+		BBA136CA196131EB00CAC5B2 /* VenmoPermissions */ = {
+			isa = PBXGroup;
+			children = (
+				BB861009195FFDBA0041C13D /* VenmoPermissionsVC.h */,
+				BB86100A195FFDBA0041C13D /* VenmoPermissionsVC.m */,
+			);
+			name = VenmoPermissions;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -400,6 +413,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BB86100B195FFDBA0041C13D /* VenmoPermissionsVC.m in Sources */,
 				BB5EC2351952A800008AEB48 /* WallVC.m in Sources */,
 				BB82B91419512FBE00E175FA /* CostSplitter.xcdatamodeld in Sources */,
 				BB82B90D19512FBE00E175FA /* main.m in Sources */,

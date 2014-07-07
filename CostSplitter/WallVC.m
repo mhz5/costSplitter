@@ -11,6 +11,7 @@
 #import "FriendDelegate.h"
 #import <Parse/Parse.h>
 #import <Venmo-iOS-SDK/Venmo.h>
+#import "VenmoPermissionsVC.h"
 
 @interface WallVC () 
 
@@ -18,12 +19,11 @@
 
 @implementation WallVC
 
-NSMutableArray *autocompleteFriends;
+NSDictionary *friends;
 UITableView *friendTableView;
 FriendDelegate *friendDelegate;
 PFUser *curUser;
-NSString *code;
-NSString *token;
+NSString *_token;
 
 - (IBAction)logout:(id)sender {
     [PFUser logOut];
@@ -32,85 +32,52 @@ NSString *token;
 
 # pragma mark - authentication
 
-- (void)webViewDidFinishLoad:(UIWebView *)aWebView
-{
-    NSString *url = _webView.request.URL.absoluteString;
-    // Extract the code. Use code to get access token.
-    NSArray *split = [url componentsSeparatedByString:@"code="];
-    if (split.count > 1) {
-        code = [split objectAtIndex:1];
-        //        NSLog(@"Code: %@", code);
-        [self getToken:code];
-    }
-}
-
-- (void)getToken:(NSString *) code {
-    [PFCloud callFunctionInBackground:@"getAccessToken"
-                       withParameters:@{@"code":code,
-                                        @"userID":curUser.objectId}
-                                block:^(NSString *result, NSError *error) {
-                                    if (!error)
-                                        token = result;
-                                }];
-}
-
-- (IBAction)cancelPermissions:(id)sender {
-    [[Venmo sharedInstance] logout];
-    if ([[Venmo sharedInstance] isSessionValid] == false) {
-        UIAlertView *alert = [[UIAlertView alloc] initWithTitle:@"Log Out" message:@"No longer have Venmo permissions" delegate:nil cancelButtonTitle:@"What a shame" otherButtonTitles:nil, nil];
-        
-        [alert show];
-    }
-}
 
 #pragma mark - Friends
-- (void)getFriends {
+- (void) getFriends {
     [PFCloud callFunctionInBackground:@"getFriends"
                        withParameters:@{@"userID":curUser.objectId}
-                                block:^(NSMutableArray *result, NSError *error) {
-                                    if (!error)
-                                        [self setupAutocompleteWithFriends:result];
+                                block:^(NSDictionary *result, NSError *error) {
+                                    if (!error) {
+                                        friends = result;
+
+                                        [self setupAutocomplete];
+                                        NSLog(@"Friends result:\n%@", friends);
+                                    }
+                                    else {
+                                        NSLog(@"Error: %@", error.userInfo);
+
+                                        [self performSegueWithIdentifier:@"SeekVenmoPermissions" sender:self];
+                                    }
                                 }];
 }
 
-- (void)setupAutocompleteWithFriends:(NSMutableArray *) friends {
+- (void)setupAutocomplete {
     friendTableView = [[UITableView alloc] initWithFrame:CGRectMake(0, 120, 320, 200) style:UITableViewStylePlain];
-    friendDelegate = [[FriendDelegate alloc] initWithTableView:friendTableView andFriends:friends];
+    friendDelegate = [[FriendDelegate alloc] initWithTableView:friendTableView andFriends:friends modifyingTextView:_groupTextView];
+    
     friendTableView.delegate = friendDelegate;
     friendTableView.dataSource = friendDelegate;
+    _groupTextView.delegate = friendDelegate;
+    
     [self.view addSubview:friendTableView];
-    NSLog(@"Added table view");
 }
-
-
-
-
-
-
-
-
-
-
 
 #pragma mark - Text Field
-- (BOOL)textFieldShouldReturn:(UITextField *)textField{
-    
-    [textField resignFirstResponder];
-    
-    friendTableView.hidden = YES;
-    return YES;
-}
 
-- (BOOL)textField:(UITextField *)textField
-        shouldChangeCharactersInRange:(NSRange)range
-        replacementString:(NSString *)string {
-    
-    NSString *substring = [NSString stringWithString:textField.text];
-    substring = [substring stringByReplacingCharactersInRange:range withString:string];
+#pragma mark - Venmo permissions
 
-    [friendDelegate showAutocompleteFriendsFromSubstring:substring];
+- (BOOL) seekVenmoPermissions {
+    // If user doesn't have access token yet, request Venmo permissions.
+
+    NSString *accessToken = [curUser objectForKey:@"access_token"];
+    NSLog(@"Access token: %@", accessToken);
+    if (!_token && !accessToken) {
+        [self performSegueWithIdentifier:@"SeekVenmoPermissions" sender:self];
+        return true;
+    }
     
-    return YES;
+    return false;
 }
 
 #pragma mark - prepared methods
@@ -120,12 +87,21 @@ NSString *token;
     [super viewDidLoad];
     
     curUser = [PFUser currentUser];
-    
-//    [_webView loadRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"https://api.venmo.com/v1/oauth/authorize?client_id=1777&scope=access_friends%20access_profile%20access_email%20access_phone%20access_balance&response_type=code"]]];
-//    _webView.scalesPageToFit = YES;
-    
+
     [self getFriends];
+    
+    
+//    [PFCloud callFunctionInBackground:@"addGroup"
+//                       withParameters:@{@"userID": curUser.objectId,
+//                                        @"members": @[@"test1", @"test2"]}
+//                                block:^(id object, NSError *error) {
+//                                    if (!error)
+//                                        NSLog(@"Added a group");
+//                                    else
+//                                        NSLog(@"%@", error.userInfo);
+//                                }];
 }
+
 
 - (void)didReceiveMemoryWarning
 {
@@ -133,15 +109,17 @@ NSString *token;
     // Dispose of any resources that can be recreated.
 }
 
-/*
- #pragma mark - Navigation
- 
- // In a storyboard-based application, you will often want to do a little preparation before navigation
- - (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
- {
- // Get the new view controller using [segue destinationViewController].
- // Pass the selected object to the new view controller.
- }
- */
+
+#pragma mark - Navigation
+- (void)prepareForSegue:(UIStoryboardSegue *)segue sender:(id)sender
+{
+    if ([[segue identifier] isEqualToString:@"SeekVenmoPermissions"]) {
+        [[segue destinationViewController] setPFUser:curUser];
+    }
+}
+
+- (void)setAccessToken:(NSString *)token {
+    _token = token;
+}
 
 @end

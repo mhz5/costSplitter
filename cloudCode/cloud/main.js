@@ -1,5 +1,6 @@
-var friends = require('cloud/testFriends.js');
+var friends = require('cloud/friends.js');
 var auth = require('cloud/auth.js');
+var groups = require('cloud/groups.js');
 
 Parse.Cloud.define("getFriends", function(request, response) {
 	var token;
@@ -25,7 +26,6 @@ Parse.Cloud.define("getFriends", function(request, response) {
 	});
 });
 
-
 Parse.Cloud.define("requestAccessToken", function(request, response) {
 	var code = request.params.code;
 	var userID = request.params.userID;
@@ -33,4 +33,13 @@ Parse.Cloud.define("requestAccessToken", function(request, response) {
 	auth.requestAccessToken(code, userID,
 				{success: function(input) {response.success(input)},
 				error: function(input) {response.error(input)}});
+});
+
+Parse.Cloud.define("addGroup", function(request, response) {
+	var members = request.params.members;
+	var userID = request.params.userID;
+	
+	groups.addGroup(members, userID,
+		{success: function() {response.success("Added a group.")},
+		 error:   function(input) {response.error(input)}});
 });

@@ -8,9 +8,12 @@
 
 #import <Foundation/Foundation.h>
 
-@interface FriendDelegate : UITableViewController <UITableViewDelegate, UITableViewDataSource>
+@interface FriendDelegate : UITableViewController <UITableViewDelegate, UITableViewDataSource, UITextViewDelegate>
 
-- (instancetype)initWithTableView:(UITableView *)table andFriends:(NSMutableArray *)friends;
+
+@property UITextView *textView;
+
+- (instancetype)initWithTableView:(UITableView *)table andFriends:(NSDictionary *)friends modifyingTextView:(UITextView *) textView;
 
 - (void)showAutocompleteFriendsFromSubstring:(NSString *)substring;
 
